@@ -1,0 +1,42 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\altera\13.0sp1\Projects\BCD_7seg\simulation\modelsim
+Ebcd_7seg
+Z1 w1615079665
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dD:\altera\13.0sp1\Projects\BCD_7seg\simulation\modelsim
+Z6 8D:/altera/13.0sp1/Projects/BCD_7seg/BCD_7seg.vhd
+Z7 FD:/altera/13.0sp1/Projects/BCD_7seg/BCD_7seg.vhd
+l0
+L5
+VI:ha3?6`1a3O:JnK4LU<:1
+!s100 V8FKMd<4Ai5cEYcDCaeHQ3
+Z8 OV;C;10.1d;51
+31
+!i10b 1
+Z9 !s108 1615094398.161000
+Z10 !s90 -reportprogress|300|-93|-work|work|D:/altera/13.0sp1/Projects/BCD_7seg/BCD_7seg.vhd|
+Z11 !s107 D:/altera/13.0sp1/Projects/BCD_7seg/BCD_7seg.vhd|
+Z12 o-93 -work work -O0
+Z13 tExplicit 1
+Abcd
+R2
+R3
+R4
+DEx4 work 8 bcd_7seg 0 22 I:ha3?6`1a3O:JnK4LU<:1
+l13
+L12
+Voo:Rzj2^?<S0W5_4o[W>:3
+!s100 _2zR_lC99f1hAQUkkP3z03
+R8
+31
+!i10b 1
+R9
+R10
+R11
+R12
+R13
