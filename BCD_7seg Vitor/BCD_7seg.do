@@ -5,4 +5,4 @@ add wave -position insertpoint  \
 sim:/bcd_7seg_tb/s_input
 add wave -position insertpoint  \
 sim:/bcd_7seg_tb/s_output
-run 450 ns
+run 500 ns

@@ -26,6 +26,8 @@ BEGIN
 
 	sim: PROCESS
 	BEGIN
+		s_input <= "0000";
+		wait for 50 ns;
 		s_input <= "0001";
 		wait for 50 ns;
 		s_input <= "0010";
@@ -43,6 +45,7 @@ BEGIN
 		s_input <= "1000";
 		wait for 50 ns;
 		s_input <= "1001";
+		wait for 50 ns;
 	END PROCESS sim;
 END ARCHITECTURE;
 
