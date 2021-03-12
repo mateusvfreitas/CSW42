@@ -2,6 +2,10 @@ Library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
+-- Conversor Binary to 7-segment display
+-- input: 4 digits binary number
+-- output: 7-segment display code
+
 ENTITY BCD_7seg IS
 	PORT(
 		input: in unsigned(3 downto 0);
