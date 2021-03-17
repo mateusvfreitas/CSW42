@@ -33,6 +33,7 @@ BEGIN
 PROCESS
 	BEGIN
 		enable_tb <= '1';
+		clk_50_tb <= '0';
 		loop
 			wait for clk_period/2;
 			clk_50_tb <= '0';

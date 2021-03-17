@@ -19,7 +19,6 @@ END ENTITY;
 
 ARCHITECTURE counter of Counter10ms IS
 BEGIN
-
 process (clk_50) IS
 	VARIABLE clock_counter: INTEGER RANGE 0 TO 500000; -- 1/100 of board frequency
 	begin
