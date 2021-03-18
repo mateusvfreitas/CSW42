@@ -24,9 +24,7 @@ process (clk_50) IS
 	begin
 	if reset='1' then
 		clock_counter := 0;
-	end if;
-
-	if rising_edge(clk_50) and enable='1' then
+	elsif rising_edge(clk_50) and enable='1' then
 		if (clock_counter = (500000-1)) then
 			output <= '1';
 			clock_counter := 0;

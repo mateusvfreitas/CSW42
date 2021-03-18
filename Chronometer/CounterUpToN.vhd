@@ -26,9 +26,7 @@ process (clk_50) IS
 	begin
 	if reset='1' then
 		counter <= x"00";
-	end if;
-
-	if rising_edge(clk_50) and enable='1' then
+	elsif rising_edge(clk_50) and enable='1' then
 		if (counter = (upper_bound-1)) then
 			output <= '1';
 			counter <= x"00";

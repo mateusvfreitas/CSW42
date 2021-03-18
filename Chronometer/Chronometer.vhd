@@ -4,25 +4,51 @@ use IEEE.numeric_std.all;
 
 
 ENTITY Chronometer is
-	PORT(
-		input: in unsigned(3 downto 0);
-		output: out unsigned(6 downto 0)
-	  );
+	PORT(clk_50: in std_logic);
 END ENTITY;
 
 ARCHITECTURE Behavior of Chronometer is
+	COMPONENT Counter10ms
+		PORT(
+			clk_50: in std_logic;
+			enable: in std_logic;
+			reset: in std_logic;
+			output: out std_logic := '0'
+		);
+	END COMPONENT;
+	
+	COMPONENT CounterUpToN
+		PORT(
+			clk_50: in std_logic;
+			enable: in std_logic;
+			reset: in std_logic;
+			upper_bound: in unsigned(7 downto 0);
+			output: out std_logic := '0'
+		);
+	END COMPONENT;
+	
+	SIGNAL output10ms: std_logic := '0';
+	SIGNAL output_digit4: std_logic := '0';
+	SIGNAL output_digit3: std_logic := '0';
+	SIGNAL output_digit2: std_logic := '0';
+	SIGNAL output_digit1: std_logic := '0';
 BEGIN
-	output <= "1111110" WHEN input = "0000" ELSE
-				 "0110000" WHEN input = "0001" ELSE
-				 "1101101" WHEN input = "0010" ELSE
-				 "1111001" WHEN input = "0011" ELSE
-				 "0110011" WHEN input = "0100" ELSE
-				 "1011011" WHEN input = "0101" ELSE
-				 "1011111" WHEN input = "0110" ELSE
-				 "1110000" WHEN input = "0111" ELSE
-				 "1111111" WHEN input = "1000" ELSE
-				 "1111011" WHEN input = "1001" ELSE
-				 "0000000";
+
+cont10ms: Counter10ms PORT MAP(
+	clk_50 => clk_50,
+	enable => '1',
+	reset => '0',
+	output => output10ms
+);
+	
+digit4: CounterUpToN PORT MAP(
+	clk_50 => clk_50,
+	enable => output10ms,
+	reset => '0',
+	upper_bound => x"0A", -- Count from 0 to 9
+	output => output_digit3
+);
+
 END ARCHITECTURE;
 
 
