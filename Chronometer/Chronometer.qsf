@@ -62,4 +62,33 @@ set_global_assignment -name VHDL_FILE BCD_7seg_tb.vhd
 set_global_assignment -name VHDL_FILE Chronometer_tb.vhd
 set_global_assignment -name VHDL_FILE Chronometer.vhd
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_AF10 -to bcd_digit4_output[6]
+set_location_assignment PIN_AB12 -to bcd_digit4_output[5]
+set_location_assignment PIN_AC12 -to bcd_digit4_output[4]
+set_location_assignment PIN_AD11 -to bcd_digit4_output[3]
+set_location_assignment PIN_AE11 -to bcd_digit4_output[2]
+set_location_assignment PIN_V14 -to bcd_digit4_output[1]
+set_location_assignment PIN_V13 -to bcd_digit4_output[0]
+set_location_assignment PIN_V20 -to bcd_digit3_output[6]
+set_location_assignment PIN_V21 -to bcd_digit3_output[5]
+set_location_assignment PIN_W21 -to bcd_digit3_output[4]
+set_location_assignment PIN_Y22 -to bcd_digit3_output[3]
+set_location_assignment PIN_AA24 -to bcd_digit3_output[2]
+set_location_assignment PIN_AA23 -to bcd_digit3_output[1]
+set_location_assignment PIN_AB24 -to bcd_digit3_output[0]
+set_location_assignment PIN_AB23 -to bcd_digit2_output[6]
+set_location_assignment PIN_V22 -to bcd_digit2_output[5]
+set_location_assignment PIN_AC25 -to bcd_digit2_output[4]
+set_location_assignment PIN_AC26 -to bcd_digit2_output[3]
+set_location_assignment PIN_AB26 -to bcd_digit2_output[2]
+set_location_assignment PIN_AB25 -to bcd_digit2_output[1]
+set_location_assignment PIN_Y24 -to bcd_digit2_output[0]
+set_location_assignment PIN_Y23 -to bcd_digit1_output[6]
+set_location_assignment PIN_AA25 -to bcd_digit1_output[5]
+set_location_assignment PIN_AA26 -to bcd_digit1_output[4]
+set_location_assignment PIN_Y26 -to bcd_digit1_output[3]
+set_location_assignment PIN_Y25 -to bcd_digit1_output[2]
+set_location_assignment PIN_U22 -to bcd_digit1_output[1]
+set_location_assignment PIN_W24 -to bcd_digit1_output[0]
+set_location_assignment PIN_N2 -to clk_50
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

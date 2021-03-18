@@ -18,19 +18,20 @@ ENTITY Counter10ms IS
 END ENTITY;
 
 ARCHITECTURE counter of Counter10ms IS
-	signal clock_counter: unsigned(18 downto 0) := (others => '0');
+	signal clock_counter: integer range 0 to 500000;
+	signal output_aux: std_logic := '0';
 BEGIN
+	output <= output_aux;
 process (clk_50) IS
 	begin
 	if reset='1' then
-		clock_counter <= (others => '0');
+		clock_counter <= 0;
+		
 	elsif rising_edge(clk_50) and enable='1' then
-		if (clock_counter = (500000-1)) then  -- 1/100 of board frequency
-			output <= '1';
-			clock_counter <= (others => '0');
-		else
-			output <= '0';
-			clock_counter <= clock_counter + 1;
+		clock_counter <= clock_counter + 1;
+		if (clock_counter = (499999-1)) or output_aux = '1' then  -- 1/100 of board frequency
+			output_aux <= not output_aux;	
+			clock_counter <= 0;
 		end if;
 	end if;
 end process;
