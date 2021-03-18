@@ -12,7 +12,8 @@ ARCHITECTURE teste of CounterUpToN_tb IS
 			enable: in std_logic;
 			reset: in std_logic;
 			upper_bound: in unsigned(7 downto 0);
-			output: out std_logic := '0'
+			carry: out std_logic := '0';
+			count: out unsigned(7 downto 0)
 		);
 	END COMPONENT CounterUpToN;
 
@@ -20,7 +21,8 @@ ARCHITECTURE teste of CounterUpToN_tb IS
 	SIGNAL enable_tb: std_logic;
 	SIGNAL reset_tb: std_logic;
 	SIGNAL upper_bound_tb: unsigned(7 downto 0);
-	SIGNAL output_tb: std_logic;
+	SIGNAL carry_tb: std_logic;
+	SIGNAL count_tb: unsigned(7 downto 0);
 
 	constant clk_period : time := 20 ns; -- 50 Mhz
 
@@ -30,7 +32,8 @@ BEGIN
 		enable => enable_tb,
 		reset => reset_tb,
 		upper_bound => upper_bound_tb,
-		output => output_tb
+		carry => carry_tb,
+		count => count_tb
 	);
 
 PROCESS

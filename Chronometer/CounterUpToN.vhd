@@ -15,7 +15,8 @@ ENTITY CounterUpToN IS
 		enable: in std_logic;
 		reset: in std_logic;
 		upper_bound: in unsigned(7 downto 0);
-	   output: out std_logic := '0'
+	   carry: out std_logic := '0';
+		count: out unsigned(7 downto 0)
 	);
 END ENTITY;
 
@@ -28,12 +29,13 @@ process (clk_50) IS
 		counter <= x"00";
 	elsif rising_edge(clk_50) and enable='1' then
 		if (counter = (upper_bound-1)) then
-			output <= '1';
+			carry <= '1';
 			counter <= x"00";
 		else
-			output <= '0';
+			carry <= '0';
 			counter <= counter + 1;
 		end if;
+		count <= counter;
 	end if;
 end process;
 END ARCHITECTURE;
