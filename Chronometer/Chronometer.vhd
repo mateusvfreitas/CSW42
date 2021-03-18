@@ -9,7 +9,9 @@ ENTITY Chronometer is
 		bcd_digit4_output: out unsigned(6 downto 0);
 		bcd_digit3_output: out unsigned(6 downto 0);
 		bcd_digit2_output: out unsigned(6 downto 0);
-		bcd_digit1_output: out unsigned(6 downto 0)
+		bcd_digit1_output: out unsigned(6 downto 0);
+		button_start_stop: in std_logic;
+		button_reset: in std_logic
 	);
 	
 END ENTITY;
@@ -55,6 +57,10 @@ ARCHITECTURE Behavior of Chronometer is
 	SIGNAL enable_digit3: std_logic;
 	SIGNAL enable_digit2: std_logic;
 	SIGNAL enable_digit1: std_logic;
+	SIGNAL enable_count: std_logic := '0';
+	SIGNAL reset: std_logic := '0';
+	SIGNAL debounce_button: std_logic := '0';
+	SIGNAL debounce_counter: integer range 0 to 50000000; 
 	
 BEGIN
 
@@ -65,15 +71,15 @@ enable_digit1 <= enable_digit2 and carry_digit2;
 
 cont10ms: Counter10ms PORT MAP(
 	clk_50 => clk_50,
-	enable => '1',
-	reset => '0',
+	enable => enable_count,
+	reset => reset,
 	output => output10ms
 );
 	
 digit4: CounterUpToN PORT MAP(
 	clk_50 => clk_50,
 	enable => enable_digit4,
-	reset => '0',
+	reset => reset,
 	upper_bound => x"0A", -- Count from 0 to 9
 	carry => carry_digit4,
 	count => count_digit4
@@ -82,7 +88,7 @@ digit4: CounterUpToN PORT MAP(
 digit3: CounterUpToN PORT MAP(
 	clk_50 => clk_50,
 	enable => enable_digit3,
-	reset => '0',
+	reset => reset,
 	upper_bound => x"0A", -- Count from 0 to 9
 	carry => carry_digit3,
 	count => count_digit3
@@ -91,7 +97,7 @@ digit3: CounterUpToN PORT MAP(
 digit2: CounterUpToN PORT MAP(
 	clk_50 => clk_50,
 	enable => enable_digit2,
-	reset => '0',
+	reset => reset,
 	upper_bound => x"0A", -- Count from 0 to 9
 	carry => carry_digit2,
 	count => count_digit2
@@ -100,7 +106,7 @@ digit2: CounterUpToN PORT MAP(
 digit1: CounterUpToN PORT MAP(
 	clk_50 => clk_50,
 	enable => enable_digit1,
-	reset => '0',
+	reset => reset,
 	upper_bound => x"06", -- Count from 0 to 5
 	carry => carry_digit1,
 	count => count_digit1
@@ -126,6 +132,28 @@ bcd_digit1: BCD_7seg PORT MAP(
 	output => bcd_digit1_output
 );
 
+PROCESS (clk_50)
+BEGIN
+	if rising_edge(clk_50) then
+		if button_start_stop='0' and debounce_button='0' then
+			enable_count <= not enable_count;
+			debounce_button <= '1';
+			debounce_counter <= 0;
+		elsif debounce_counter = 25000000 then -- 500ms
+			debounce_counter <= 0;
+			debounce_button <= '0';
+		elsif debounce_button = '1' then
+			debounce_counter <= debounce_counter + 1;
+		end if;
+		
+		if button_reset='0' and enable_count='0' then
+			reset <= '1';
+		else
+			reset <= '0';
+		end if;
+	end if;
+	 
+end PROCESS;
 
 END ARCHITECTURE;
 
