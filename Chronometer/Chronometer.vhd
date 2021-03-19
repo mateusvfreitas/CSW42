@@ -10,8 +10,9 @@ ENTITY Chronometer is
 		bcd_digit3_output: out unsigned(6 downto 0);
 		bcd_digit2_output: out unsigned(6 downto 0);
 		bcd_digit1_output: out unsigned(6 downto 0);
-		button_start_stop: in std_logic;
-		button_reset: in std_logic
+		button_start_stop: in std_logic; -- 0 means pressed
+		button_reset: in std_logic; -- 0 means pressed
+		override_buttons_and_count: in std_logic := '0' -- this is used for tests
 	);
 	
 END ENTITY;
@@ -53,17 +54,19 @@ ARCHITECTURE Behavior of Chronometer is
 	SIGNAL count_digit3: unsigned(7 downto 0);
 	SIGNAL count_digit2: unsigned(7 downto 0);
 	SIGNAL count_digit1: unsigned(7 downto 0);
+	SIGNAL enable_cont10ms: std_logic;
 	SIGNAL enable_digit4: std_logic;
 	SIGNAL enable_digit3: std_logic;
 	SIGNAL enable_digit2: std_logic;
 	SIGNAL enable_digit1: std_logic;
-	SIGNAL enable_count: std_logic := '0';
+	SIGNAL enable_count_flag: std_logic := '0';
 	SIGNAL reset: std_logic := '0';
 	SIGNAL debounce_button: std_logic := '0';
 	SIGNAL debounce_counter: integer range 0 to 50000000; 
 	
 BEGIN
 
+enable_cont10ms <= override_buttons_and_count or enable_count_flag;
 enable_digit4 <= output10ms;
 enable_digit3 <= enable_digit4 and carry_digit4;
 enable_digit2 <= enable_digit3 and carry_digit3;
@@ -71,7 +74,7 @@ enable_digit1 <= enable_digit2 and carry_digit2;
 
 cont10ms: Counter10ms PORT MAP(
 	clk_50 => clk_50,
-	enable => enable_count,
+	enable => enable_cont10ms,
 	reset => reset,
 	output => output10ms
 );
@@ -136,7 +139,7 @@ PROCESS (clk_50)
 BEGIN
 	if rising_edge(clk_50) then
 		if button_start_stop='0' and debounce_button='0' then
-			enable_count <= not enable_count;
+			enable_count_flag <= not enable_count_flag;
 			debounce_button <= '1';
 			debounce_counter <= 0;
 		elsif debounce_counter = 25000000 then -- 500ms
@@ -146,7 +149,7 @@ BEGIN
 			debounce_counter <= debounce_counter + 1;
 		end if;
 		
-		if button_reset='0' and enable_count='0' then
+		if button_reset='0' and enable_count_flag='0' then
 			reset <= '1';
 		else
 			reset <= '0';
