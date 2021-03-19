@@ -1,8 +1,7 @@
-vcom -reportprogress 300 -work work {D:/Quartus Projects/BCD_7seg/BCD_7seg.vhd}
-vcom -reportprogress 300 -work work {D:/Quartus Projects/BCD_7seg/BCD_7seg_tb.vhd}
-vsim BCD_7seg_tb
-add wave -position insertpoint  \
-sim:/bcd_7seg_tb/s_input
-add wave -position insertpoint  \
-sim:/bcd_7seg_tb/s_output
-run 500 ns
+vcom -reportprogress 300 -work work {D:/Quartus Projects/Chronometer/*.vhd}
+vsim gate_work.chronometer_tb
+add wave -position end  sim:/chronometer_tb/DUT/count_digit4
+add wave -position end  sim:/chronometer_tb/DUT/count_digit3
+add wave -position end  sim:/chronometer_tb/DUT/count_digit2
+add wave -position end  sim:/chronometer_tb/DUT/count_digit1
+run 110 ms
