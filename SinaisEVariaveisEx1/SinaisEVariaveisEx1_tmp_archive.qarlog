@@ -1,0 +1,23 @@
+Quartus II Archive log --	D:/Quartus Projects/SinaisEVariaveisEx1/SinaisEVariaveisEx1_tmp_archive.qarlog
+
+Archive:	D:/Quartus Projects/SinaisEVariaveisEx1/SinaisEVariaveisEx1_tmp_archive.qar
+Date:		Sat Mar 20 14:53:04 2021
+Quartus II 64-Bit		13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+
+	=========== Files Selected: ===========
+D:/Quartus Projects/SinaisEVariaveisEx1/SinaisEVariaveis.qsf
+D:/Quartus Projects/SinaisEVariaveisEx1/SinaisEVariaveis.vhd
+D:/Quartus Projects/SinaisEVariaveisEx1/SinaisEVariaveisEx1.qpf
+D:/Quartus Projects/SinaisEVariaveisEx1/SinaisEVariaveis_tb.vhd
+D:/Quartus Projects/SinaisEVariaveisEx1/assignment_defaults.qdf
+D:/Quartus Projects/SinaisEVariaveisEx1/incremental_db/compiled_partitions/SinaisEVariaveis.db_info
+	======= Total: 6 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Sat Mar 20 14:53:05 2021
+Source archive file:	D:/Quartus Projects/SinaisEVariaveisEx1/SinaisEVariaveisEx1_tmp_archive.qar
+Archive was extracted into	D:/Quartus Projects/SinaisEVariaveisEx2/
+		 - successfully.
