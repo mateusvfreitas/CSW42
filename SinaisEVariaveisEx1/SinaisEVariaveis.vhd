@@ -2,10 +2,6 @@ Library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
--- Counts up to N and sends an high output
--- clk_50: board clock
--- enable: enables the circuit
--- reset: resets the count
 
 ENTITY SinaisEVariaveis IS
 	PORT(

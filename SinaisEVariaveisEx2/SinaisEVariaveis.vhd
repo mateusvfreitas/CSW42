@@ -2,11 +2,6 @@ Library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
--- Counts up to N and sends an high output
--- clk_50: board clock
--- enable: enables the circuit
--- reset: resets the count
-
 ENTITY SinaisEVariaveis IS
 	PORT(
 		clk_50: in std_logic;
@@ -34,7 +29,6 @@ process (clk_50) IS
 	variable I: integer range 0 to 3;
 	begin
 	if rising_edge(clk_50) then
-	
 	
 		-- conta numero de 1s usando for
 		count_for := "00";
