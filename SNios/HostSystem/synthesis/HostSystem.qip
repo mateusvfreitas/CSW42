@@ -1,0 +1,99 @@
+set_global_assignment -entity "HostSystem" -library "HostSystem" -name IP_TOOL_NAME "Qsys"
+set_global_assignment -entity "HostSystem" -library "HostSystem" -name IP_TOOL_VERSION "13.0sp1"
+set_global_assignment -entity "HostSystem" -library "HostSystem" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -library "HostSystem" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../HostSystem.sopcinfo"]
+set_instance_assignment -entity "HostSystem" -library "HostSystem" -name SLD_INFO "QSYS_NAME HostSystem HAS_SOPCINFO 1 GENERATION_ID 1618785848"
+set_global_assignment -library "HostSystem" -name MISC_FILE [file join $::quartus(qip_path) "../../HostSystem.cmp"]
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "HostSystem" -name MISC_FILE [file join $::quartus(qip_path) "../../HostSystem.qsys"]
+
+set_global_assignment -library "HostSystem" -name VHDL_FILE [file join $::quartus(qip_path) "HostSystem.vhd"]
+set_global_assignment -library "HostSystem" -name VHDL_FILE [file join $::quartus(qip_path) "hostsystem_memory_s1_translator.vhd"]
+set_global_assignment -library "HostSystem" -name VHDL_FILE [file join $::quartus(qip_path) "hostsystem_exemplo_novo_0_avalon_slave_0_translator.vhd"]
+set_global_assignment -library "HostSystem" -name VHDL_FILE [file join $::quartus(qip_path) "hostsystem_memory_s1_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd"]
+set_global_assignment -library "HostSystem" -name VHDL_FILE [file join $::quartus(qip_path) "hostsystem_exemplo_novo_0_avalon_slave_0_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd"]
+set_global_assignment -library "HostSystem" -name VHDL_FILE [file join $::quartus(qip_path) "hostsystem_memory_s1_translator_avalon_universal_slave_0_agent.vhd"]
+set_global_assignment -library "HostSystem" -name VHDL_FILE [file join $::quartus(qip_path) "hostsystem_exemplo_novo_0_avalon_slave_0_translator_avalon_universal_slave_0_agent.vhd"]
+set_global_assignment -library "HostSystem" -name VHDL_FILE [file join $::quartus(qip_path) "hostsystem_width_adapter.vhd"]
+set_global_assignment -library "HostSystem" -name VHDL_FILE [file join $::quartus(qip_path) "hostsystem_width_adapter_001.vhd"]
+set_global_assignment -library "HostSystem" -name VHDL_FILE [file join $::quartus(qip_path) "hostsystem_cpu_instruction_master_translator.vhd"]
+set_global_assignment -library "HostSystem" -name VHDL_FILE [file join $::quartus(qip_path) "hostsystem_cpu_data_master_translator.vhd"]
+set_global_assignment -library "HostSystem" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/HostSystem_irq_mapper.sv"]
+set_global_assignment -library "HostSystem" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_width_adapter.sv"]
+set_global_assignment -library "HostSystem" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_address_alignment.sv"]
+set_global_assignment -library "HostSystem" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_burst_uncompressor.sv"]
+set_global_assignment -library "HostSystem" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_arbitrator.sv"]
+set_global_assignment -library "HostSystem" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/HostSystem_rsp_xbar_mux.sv"]
+set_global_assignment -library "HostSystem" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/HostSystem_cmd_xbar_mux.sv"]
+set_global_assignment -library "HostSystem" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/HostSystem_cmd_xbar_demux.sv"]
+set_global_assignment -library "HostSystem" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.v"]
+set_global_assignment -library "HostSystem" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_synchronizer.v"]
+set_global_assignment -library "HostSystem" -name SDC_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.sdc"]
+set_global_assignment -library "HostSystem" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/HostSystem_id_router_001.sv"]
+set_global_assignment -library "HostSystem" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/HostSystem_id_router.sv"]
+set_global_assignment -library "HostSystem" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/HostSystem_addr_router.sv"]
+set_global_assignment -library "HostSystem" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_avalon_sc_fifo.v"]
+set_global_assignment -library "HostSystem" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_slave_agent.sv"]
+set_global_assignment -library "HostSystem" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_agent.sv"]
+set_global_assignment -library "HostSystem" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_slave_translator.sv"]
+set_global_assignment -library "HostSystem" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_translator.sv"]
+set_global_assignment -library "HostSystem" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/contador0.vhd"]
+set_global_assignment -library "HostSystem" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/contador1.vhd"]
+set_global_assignment -library "HostSystem" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/contador8bit.vhd"]
+set_global_assignment -library "HostSystem" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/reg32.vhd"]
+set_global_assignment -library "HostSystem" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/reg32_avalon_interface.vhd"]
+set_global_assignment -library "HostSystem" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/HostSystem_cpu.v"]
+set_global_assignment -library "HostSystem" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/HostSystem_cpu_rf_ram_a.mif"]
+set_global_assignment -library "HostSystem" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/HostSystem_cpu_rf_ram_b.mif"]
+set_global_assignment -library "HostSystem" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/HostSystem_cpu_test_bench.v"]
+set_global_assignment -library "HostSystem" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/HostSystem_memory.hex"]
+set_global_assignment -library "HostSystem" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/HostSystem_memory.v"]
+
+set_global_assignment -entity "HostSystem_irq_mapper" -library "HostSystem" -name IP_TOOL_NAME "altera_irq_mapper"
+set_global_assignment -entity "HostSystem_irq_mapper" -library "HostSystem" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "HostSystem_irq_mapper" -library "HostSystem" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_width_adapter" -library "HostSystem" -name IP_TOOL_NAME "altera_merlin_width_adapter"
+set_global_assignment -entity "altera_merlin_width_adapter" -library "HostSystem" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_width_adapter" -library "HostSystem" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "HostSystem_rsp_xbar_mux" -library "HostSystem" -name IP_TOOL_NAME "altera_merlin_multiplexer"
+set_global_assignment -entity "HostSystem_rsp_xbar_mux" -library "HostSystem" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "HostSystem_rsp_xbar_mux" -library "HostSystem" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "HostSystem_cmd_xbar_mux" -library "HostSystem" -name IP_TOOL_NAME "altera_merlin_multiplexer"
+set_global_assignment -entity "HostSystem_cmd_xbar_mux" -library "HostSystem" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "HostSystem_cmd_xbar_mux" -library "HostSystem" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "HostSystem_cmd_xbar_demux" -library "HostSystem" -name IP_TOOL_NAME "altera_merlin_demultiplexer"
+set_global_assignment -entity "HostSystem_cmd_xbar_demux" -library "HostSystem" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "HostSystem_cmd_xbar_demux" -library "HostSystem" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_reset_controller" -library "HostSystem" -name IP_TOOL_NAME "altera_reset_controller"
+set_global_assignment -entity "altera_reset_controller" -library "HostSystem" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_reset_controller" -library "HostSystem" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "HostSystem_id_router_001" -library "HostSystem" -name IP_TOOL_NAME "altera_merlin_router"
+set_global_assignment -entity "HostSystem_id_router_001" -library "HostSystem" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "HostSystem_id_router_001" -library "HostSystem" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "HostSystem_id_router" -library "HostSystem" -name IP_TOOL_NAME "altera_merlin_router"
+set_global_assignment -entity "HostSystem_id_router" -library "HostSystem" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "HostSystem_id_router" -library "HostSystem" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "HostSystem_addr_router" -library "HostSystem" -name IP_TOOL_NAME "altera_merlin_router"
+set_global_assignment -entity "HostSystem_addr_router" -library "HostSystem" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "HostSystem_addr_router" -library "HostSystem" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_avalon_sc_fifo" -library "HostSystem" -name IP_TOOL_NAME "altera_avalon_sc_fifo"
+set_global_assignment -entity "altera_avalon_sc_fifo" -library "HostSystem" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_avalon_sc_fifo" -library "HostSystem" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_slave_agent" -library "HostSystem" -name IP_TOOL_NAME "altera_merlin_slave_agent"
+set_global_assignment -entity "altera_merlin_slave_agent" -library "HostSystem" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_slave_agent" -library "HostSystem" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_master_agent" -library "HostSystem" -name IP_TOOL_NAME "altera_merlin_master_agent"
+set_global_assignment -entity "altera_merlin_master_agent" -library "HostSystem" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_master_agent" -library "HostSystem" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_slave_translator" -library "HostSystem" -name IP_TOOL_NAME "altera_merlin_slave_translator"
+set_global_assignment -entity "altera_merlin_slave_translator" -library "HostSystem" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_slave_translator" -library "HostSystem" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_master_translator" -library "HostSystem" -name IP_TOOL_NAME "altera_merlin_master_translator"
+set_global_assignment -entity "altera_merlin_master_translator" -library "HostSystem" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_master_translator" -library "HostSystem" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "HostSystem_cpu" -library "HostSystem" -name IP_TOOL_NAME "altera_nios2_qsys"
+set_global_assignment -entity "HostSystem_cpu" -library "HostSystem" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "HostSystem_cpu" -library "HostSystem" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "HostSystem_memory" -library "HostSystem" -name IP_TOOL_NAME "altera_avalon_onchip_memory2"
+set_global_assignment -entity "HostSystem_memory" -library "HostSystem" -name IP_TOOL_VERSION "13.0.1.99.2"
+set_global_assignment -entity "HostSystem_memory" -library "HostSystem" -name IP_TOOL_ENV "Qsys"

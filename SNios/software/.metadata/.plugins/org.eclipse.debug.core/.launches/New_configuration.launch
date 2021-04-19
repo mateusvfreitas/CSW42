@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.altera.sbtgui.launch.modelsim.Nios2ModelsimLaunchConfiguration">
+<stringAttribute key="elfFile" value="D:\VHDL_NOVO\user_HW_Copia1\hw\aaaaa\NIOS-IV\SimpleNiosII\software\teste3\teste3.elf"/>
+<stringAttribute key="modelSimPath" value="C:\altera\13.0sp1\modelsim_ase\win32aloem"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="teste3.elf"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="teste3"/>
+<stringAttribute key="spdPath" value="D:\VHDL_NOVO\user_HW_Copia1\hw\aaaaa\NIOS-IV\SimpleNiosII\HostSystem_tb.spd"/>
+</launchConfiguration>
