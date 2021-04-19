@@ -79,9 +79,9 @@
    type="VHDL"
    library="addr_router" />
  <file
-   path="HostSystem/testbench/HostSystem_tb/simulation/submodules/HostSystem_aval1_avalon_slave_0_translator_avalon_universal_slave_0_agent_rsp_fifo.vho"
+   path="HostSystem/testbench/HostSystem_tb/simulation/submodules/HostSystem_top_avalon_0_avalon_slave_0_translator_avalon_universal_slave_0_agent_rsp_fifo.vho"
    type="VHDL"
-   library="aval1_avalon_slave_0_translator_avalon_universal_slave_0_agent_rsp_fifo" />
+   library="top_avalon_0_avalon_slave_0_translator_avalon_universal_slave_0_agent_rsp_fifo" />
  <file
    path="HostSystem/testbench/HostSystem_tb/simulation/submodules/HostSystem_memory_s1_translator_avalon_universal_slave_0_agent_rsp_fifo.vho"
    type="VHDL"
@@ -137,25 +137,13 @@
    library="cpu_instruction_master_translator"
    simulator="riviera" />
  <file
-   path="HostSystem/testbench/HostSystem_tb/simulation/submodules/contador0.vhd"
-   type="VHDL"
-   library="aval1" />
- <file
-   path="HostSystem/testbench/HostSystem_tb/simulation/submodules/contador1.vhd"
-   type="VHDL"
-   library="aval1" />
- <file
-   path="HostSystem/testbench/HostSystem_tb/simulation/submodules/contador8bit.vhd"
-   type="VHDL"
-   library="aval1" />
- <file
    path="HostSystem/testbench/HostSystem_tb/simulation/submodules/reg32.vhd"
    type="VHDL"
-   library="aval1" />
+   library="top_avalon_0" />
  <file
-   path="HostSystem/testbench/HostSystem_tb/simulation/submodules/reg32_avalon_interface.vhd"
+   path="HostSystem/testbench/HostSystem_tb/simulation/submodules/top_avalon.vhd"
    type="VHDL"
-   library="aval1" />
+   library="top_avalon_0" />
  <file
    path="HostSystem/testbench/HostSystem_tb/simulation/submodules/HostSystem_cpu.vhd"
    type="VHDL"
@@ -217,7 +205,7 @@
    type="VHDL"
    library="HostSystem_inst" />
  <file
-   path="HostSystem/testbench/HostSystem_tb/simulation/submodules/hostsystem_aval1_avalon_slave_0_translator.vhd"
+   path="HostSystem/testbench/HostSystem_tb/simulation/submodules/hostsystem_top_avalon_0_avalon_slave_0_translator.vhd"
    type="VHDL"
    library="HostSystem_inst" />
  <file
@@ -225,7 +213,7 @@
    type="VHDL"
    library="HostSystem_inst" />
  <file
-   path="HostSystem/testbench/HostSystem_tb/simulation/submodules/hostsystem_aval1_avalon_slave_0_translator_avalon_universal_slave_0_agent.vhd"
+   path="HostSystem/testbench/HostSystem_tb/simulation/submodules/hostsystem_top_avalon_0_avalon_slave_0_translator_avalon_universal_slave_0_agent.vhd"
    type="VHDL"
    library="HostSystem_inst" />
  <file
@@ -248,7 +236,7 @@
    path="HostSystem/testbench/HostSystem_tb/simulation/HostSystem_tb.vhd"
    type="VHDL" />
  <topLevel name="HostSystem_tb" />
- <deviceFamily name="cycloneiii" />
+ <deviceFamily name="cycloneivgx" />
  <modelMap
    controllerPath="HostSystem_tb.HostSystem_inst.memory"
    modelPath="HostSystem_tb.HostSystem_inst.memory" />

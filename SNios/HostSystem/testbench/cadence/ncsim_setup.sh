@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 13.0sp1 232 win32 2021.04.18.21:12:31
+# ACDS 13.0sp1 232 win32 2021.04.18.23:05:53
 
 # ----------------------------------------
 # ncsim - auto-generated simulation script
@@ -53,9 +53,9 @@ mkdir -p ./libraries/cmd_xbar_demux/
 mkdir -p ./libraries/id_router_001/
 mkdir -p ./libraries/id_router/
 mkdir -p ./libraries/addr_router/
-mkdir -p ./libraries/aval1_avalon_slave_0_translator_avalon_universal_slave_0_agent_rsp_fifo/
+mkdir -p ./libraries/top_avalon_0_avalon_slave_0_translator_avalon_universal_slave_0_agent_rsp_fifo/
 mkdir -p ./libraries/memory_s1_translator_avalon_universal_slave_0_agent_rsp_fifo/
-mkdir -p ./libraries/aval1/
+mkdir -p ./libraries/top_avalon_0/
 mkdir -p ./libraries/cpu/
 mkdir -p ./libraries/memory/
 mkdir -p ./libraries/HostSystem_inst_reset_bfm/
@@ -66,7 +66,9 @@ mkdir -p ./libraries/lpm/
 mkdir -p ./libraries/sgate/
 mkdir -p ./libraries/altera_mf/
 mkdir -p ./libraries/altera_lnsim/
-mkdir -p ./libraries/cycloneiii/
+mkdir -p ./libraries/cycloneiv_hssi/
+mkdir -p ./libraries/cycloneiv_pcie_hip/
+mkdir -p ./libraries/cycloneiv/
 
 # ----------------------------------------
 # copy RAM/ROM files to simulation directory
@@ -83,56 +85,57 @@ fi
 # ----------------------------------------
 # compile device library files
 if [ $SKIP_DEV_COM -eq 0 ]; then
-  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_syn_attributes.vhd"        -work altera      
-  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_standard_functions.vhd"    -work altera      
-  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/alt_dspbuilder_package.vhd"       -work altera      
-  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_europa_support_lib.vhd"    -work altera      
-  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_primitives_components.vhd" -work altera      
-  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_primitives.vhd"            -work altera      
-  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/220pack.vhd"                      -work lpm         
-  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/220model.vhd"                     -work lpm         
-  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/sgate_pack.vhd"                   -work sgate       
-  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/sgate.vhd"                        -work sgate       
-  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_mf_components.vhd"         -work altera_mf   
-  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_mf.vhd"                    -work altera_mf   
-  ncvlog -sv  "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_lnsim.sv"                  -work altera_lnsim
-  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_lnsim_components.vhd"      -work altera_lnsim
-  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/cycloneiii_atoms.vhd"             -work cycloneiii  
-  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/cycloneiii_components.vhd"        -work cycloneiii  
+  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_syn_attributes.vhd"         -work altera            
+  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_standard_functions.vhd"     -work altera            
+  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/alt_dspbuilder_package.vhd"        -work altera            
+  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_europa_support_lib.vhd"     -work altera            
+  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_primitives_components.vhd"  -work altera            
+  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_primitives.vhd"             -work altera            
+  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/220pack.vhd"                       -work lpm               
+  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/220model.vhd"                      -work lpm               
+  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/sgate_pack.vhd"                    -work sgate             
+  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/sgate.vhd"                         -work sgate             
+  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_mf_components.vhd"          -work altera_mf         
+  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_mf.vhd"                     -work altera_mf         
+  ncvlog -sv  "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_lnsim.sv"                   -work altera_lnsim      
+  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_lnsim_components.vhd"       -work altera_lnsim      
+  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/cycloneiv_hssi_components.vhd"     -work cycloneiv_hssi    
+  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/cycloneiv_hssi_atoms.vhd"          -work cycloneiv_hssi    
+  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/cycloneiv_pcie_hip_components.vhd" -work cycloneiv_pcie_hip
+  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/cycloneiv_pcie_hip_atoms.vhd"      -work cycloneiv_pcie_hip
+  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/cycloneiv_atoms.vhd"               -work cycloneiv         
+  ncvhdl -v93 "$QUARTUS_INSTALL_DIR/eda/sim_lib/cycloneiv_components.vhd"          -work cycloneiv         
 fi
 
 # ----------------------------------------
 # compile design files in correct order
 if [ $SKIP_COM -eq 0 ]; then
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_irq_mapper.vho"                                                              -work irq_mapper                                                              -cdslib ./cds_libs/irq_mapper.cds.lib                                                             
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_rsp_xbar_mux.vho"                                                            -work rsp_xbar_mux                                                            -cdslib ./cds_libs/rsp_xbar_mux.cds.lib                                                           
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_cmd_xbar_mux.vho"                                                            -work cmd_xbar_mux                                                            -cdslib ./cds_libs/cmd_xbar_mux.cds.lib                                                           
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_cmd_xbar_demux.vho"                                                          -work cmd_xbar_demux                                                          -cdslib ./cds_libs/cmd_xbar_demux.cds.lib                                                         
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_id_router_001.vho"                                                           -work id_router_001                                                           -cdslib ./cds_libs/id_router_001.cds.lib                                                          
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_id_router.vho"                                                               -work id_router                                                               -cdslib ./cds_libs/id_router.cds.lib                                                              
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_addr_router.vho"                                                             -work addr_router                                                             -cdslib ./cds_libs/addr_router.cds.lib                                                            
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_aval1_avalon_slave_0_translator_avalon_universal_slave_0_agent_rsp_fifo.vho" -work aval1_avalon_slave_0_translator_avalon_universal_slave_0_agent_rsp_fifo -cdslib ./cds_libs/aval1_avalon_slave_0_translator_avalon_universal_slave_0_agent_rsp_fifo.cds.lib
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_memory_s1_translator_avalon_universal_slave_0_agent_rsp_fifo.vho"            -work memory_s1_translator_avalon_universal_slave_0_agent_rsp_fifo            -cdslib ./cds_libs/memory_s1_translator_avalon_universal_slave_0_agent_rsp_fifo.cds.lib           
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/contador0.vhd"                                                                          -work aval1                                                                   -cdslib ./cds_libs/aval1.cds.lib                                                                  
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/contador1.vhd"                                                                          -work aval1                                                                   -cdslib ./cds_libs/aval1.cds.lib                                                                  
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/contador8bit.vhd"                                                                       -work aval1                                                                   -cdslib ./cds_libs/aval1.cds.lib                                                                  
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/reg32.vhd"                                                                              -work aval1                                                                   -cdslib ./cds_libs/aval1.cds.lib                                                                  
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/reg32_avalon_interface.vhd"                                                             -work aval1                                                                   -cdslib ./cds_libs/aval1.cds.lib                                                                  
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_cpu.vhd"                                                                     -work cpu                                                                     -cdslib ./cds_libs/cpu.cds.lib                                                                    
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_cpu_test_bench.vhd"                                                          -work cpu                                                                     -cdslib ./cds_libs/cpu.cds.lib                                                                    
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_memory.vhd"                                                                  -work memory                                                                  -cdslib ./cds_libs/memory.cds.lib                                                                 
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/altera_avalon_reset_source.vhd"                                                         -work HostSystem_inst_reset_bfm                                               -cdslib ./cds_libs/HostSystem_inst_reset_bfm.cds.lib                                              
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/altera_avalon_clock_source.vhd"                                                         -work HostSystem_inst_clk_bfm                                                 -cdslib ./cds_libs/HostSystem_inst_clk_bfm.cds.lib                                                
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem.vhd"                                                                         -work HostSystem_inst                                                         -cdslib ./cds_libs/HostSystem_inst.cds.lib                                                        
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/hostsystem_memory_s1_translator.vhd"                                                    -work HostSystem_inst                                                         -cdslib ./cds_libs/HostSystem_inst.cds.lib                                                        
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/hostsystem_aval1_avalon_slave_0_translator.vhd"                                         -work HostSystem_inst                                                         -cdslib ./cds_libs/HostSystem_inst.cds.lib                                                        
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/hostsystem_memory_s1_translator_avalon_universal_slave_0_agent.vhd"                     -work HostSystem_inst                                                         -cdslib ./cds_libs/HostSystem_inst.cds.lib                                                        
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/hostsystem_aval1_avalon_slave_0_translator_avalon_universal_slave_0_agent.vhd"          -work HostSystem_inst                                                         -cdslib ./cds_libs/HostSystem_inst.cds.lib                                                        
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/hostsystem_width_adapter.vhd"                                                           -work HostSystem_inst                                                         -cdslib ./cds_libs/HostSystem_inst.cds.lib                                                        
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/hostsystem_width_adapter_001.vhd"                                                       -work HostSystem_inst                                                         -cdslib ./cds_libs/HostSystem_inst.cds.lib                                                        
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/hostsystem_cpu_instruction_master_translator.vhd"                                       -work HostSystem_inst                                                         -cdslib ./cds_libs/HostSystem_inst.cds.lib                                                        
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/hostsystem_cpu_data_master_translator.vhd"                                              -work HostSystem_inst                                                         -cdslib ./cds_libs/HostSystem_inst.cds.lib                                                        
-  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/HostSystem_tb.vhd"                                                                                                                                                                                                                                                                 
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_irq_mapper.vho"                                                                     -work irq_mapper                                                                     -cdslib ./cds_libs/irq_mapper.cds.lib                                                                    
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_rsp_xbar_mux.vho"                                                                   -work rsp_xbar_mux                                                                   -cdslib ./cds_libs/rsp_xbar_mux.cds.lib                                                                  
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_cmd_xbar_mux.vho"                                                                   -work cmd_xbar_mux                                                                   -cdslib ./cds_libs/cmd_xbar_mux.cds.lib                                                                  
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_cmd_xbar_demux.vho"                                                                 -work cmd_xbar_demux                                                                 -cdslib ./cds_libs/cmd_xbar_demux.cds.lib                                                                
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_id_router_001.vho"                                                                  -work id_router_001                                                                  -cdslib ./cds_libs/id_router_001.cds.lib                                                                 
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_id_router.vho"                                                                      -work id_router                                                                      -cdslib ./cds_libs/id_router.cds.lib                                                                     
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_addr_router.vho"                                                                    -work addr_router                                                                    -cdslib ./cds_libs/addr_router.cds.lib                                                                   
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_top_avalon_0_avalon_slave_0_translator_avalon_universal_slave_0_agent_rsp_fifo.vho" -work top_avalon_0_avalon_slave_0_translator_avalon_universal_slave_0_agent_rsp_fifo -cdslib ./cds_libs/top_avalon_0_avalon_slave_0_translator_avalon_universal_slave_0_agent_rsp_fifo.cds.lib
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_memory_s1_translator_avalon_universal_slave_0_agent_rsp_fifo.vho"                   -work memory_s1_translator_avalon_universal_slave_0_agent_rsp_fifo                   -cdslib ./cds_libs/memory_s1_translator_avalon_universal_slave_0_agent_rsp_fifo.cds.lib                  
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/reg32.vhd"                                                                                     -work top_avalon_0                                                                   -cdslib ./cds_libs/top_avalon_0.cds.lib                                                                  
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/top_avalon.vhd"                                                                                -work top_avalon_0                                                                   -cdslib ./cds_libs/top_avalon_0.cds.lib                                                                  
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_cpu.vhd"                                                                            -work cpu                                                                            -cdslib ./cds_libs/cpu.cds.lib                                                                           
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_cpu_test_bench.vhd"                                                                 -work cpu                                                                            -cdslib ./cds_libs/cpu.cds.lib                                                                           
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_memory.vhd"                                                                         -work memory                                                                         -cdslib ./cds_libs/memory.cds.lib                                                                        
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/altera_avalon_reset_source.vhd"                                                                -work HostSystem_inst_reset_bfm                                                      -cdslib ./cds_libs/HostSystem_inst_reset_bfm.cds.lib                                                     
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/altera_avalon_clock_source.vhd"                                                                -work HostSystem_inst_clk_bfm                                                        -cdslib ./cds_libs/HostSystem_inst_clk_bfm.cds.lib                                                       
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem.vhd"                                                                                -work HostSystem_inst                                                                -cdslib ./cds_libs/HostSystem_inst.cds.lib                                                               
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/hostsystem_memory_s1_translator.vhd"                                                           -work HostSystem_inst                                                                -cdslib ./cds_libs/HostSystem_inst.cds.lib                                                               
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/hostsystem_top_avalon_0_avalon_slave_0_translator.vhd"                                         -work HostSystem_inst                                                                -cdslib ./cds_libs/HostSystem_inst.cds.lib                                                               
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/hostsystem_memory_s1_translator_avalon_universal_slave_0_agent.vhd"                            -work HostSystem_inst                                                                -cdslib ./cds_libs/HostSystem_inst.cds.lib                                                               
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/hostsystem_top_avalon_0_avalon_slave_0_translator_avalon_universal_slave_0_agent.vhd"          -work HostSystem_inst                                                                -cdslib ./cds_libs/HostSystem_inst.cds.lib                                                               
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/hostsystem_width_adapter.vhd"                                                                  -work HostSystem_inst                                                                -cdslib ./cds_libs/HostSystem_inst.cds.lib                                                               
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/hostsystem_width_adapter_001.vhd"                                                              -work HostSystem_inst                                                                -cdslib ./cds_libs/HostSystem_inst.cds.lib                                                               
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/hostsystem_cpu_instruction_master_translator.vhd"                                              -work HostSystem_inst                                                                -cdslib ./cds_libs/HostSystem_inst.cds.lib                                                               
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/hostsystem_cpu_data_master_translator.vhd"                                                     -work HostSystem_inst                                                                -cdslib ./cds_libs/HostSystem_inst.cds.lib                                                               
+  ncvhdl -v93 "$QSYS_SIMDIR/HostSystem_tb/simulation/HostSystem_tb.vhd"                                                                                                                                                                                                                                                                                      
 fi
 
 # ----------------------------------------

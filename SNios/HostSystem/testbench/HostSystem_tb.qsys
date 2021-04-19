@@ -37,7 +37,7 @@
 ]]></parameter>
  <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
  <parameter name="device" value="Unknown" />
- <parameter name="deviceFamily" value="Cyclone III" />
+ <parameter name="deviceFamily" value="Cyclone IV GX" />
  <parameter name="deviceSpeedGrade" value="Unknown" />
  <parameter name="fabricMode" value="QSYS" />
  <parameter name="generateLegacySim" value="false" />
@@ -45,16 +45,16 @@
  <parameter name="globalResetBus" value="false" />
  <parameter name="hdlLanguage" value="VERILOG" />
  <parameter name="maxAdditionalLatency" value="1" />
- <parameter name="projectName" value="SimpleNiosII.qpf" />
+ <parameter name="projectName" value="SNios.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1618791140141" />
+ <parameter name="timeStamp" value="1618797941560" />
  <parameter name="useTestBenchNamingPattern" value="true" />
  <instanceScript></instanceScript>
  <module kind="HostSystem" version="1.0" enabled="1" name="HostSystem_inst">
   <parameter name="AUTO_GENERATION_ID" value="0" />
   <parameter name="AUTO_UNIQUE_ID" value="HostSystem" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone III" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV GX" />
   <parameter name="AUTO_DEVICE" value="Unknown" />
   <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
   <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="1" />
