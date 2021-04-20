@@ -1,16 +1,15 @@
 #include <stdio.h>
 #include <system.h>
+#include "io.h"
 
 int main()
 { 
 	int atual, i=0;
-	int *pWr, *pRd;
 	while(i++ < 50) {
-		pRd = TOP_AVALON_0_BASE;
-		pWr = TOP_AVALON_0_BASE;
-		atual = *pRd;
-		*(pWr + 0) = 0x12345678;
-		*(pWr + 1) = 0xFAFAFAFA;
+		atual = IORD(TOP_AVALON_0_BASE, 0);
+		IOWR(TOP_AVALON_0_BASE, 0, 0x12345678);
+		atual = IORD(TOP_AVALON_0_BASE, 1);
+		IOWR(TOP_AVALON_0_BASE, 1, 0xFAFAFAFA);
 	}
 	return 0;
 }

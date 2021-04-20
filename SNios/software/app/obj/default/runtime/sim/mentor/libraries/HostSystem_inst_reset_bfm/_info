@@ -4,7 +4,7 @@ K3
 cModel Technology
 Z0 dD:\QP\SNios\software\app\obj\default\runtime\sim\mentor
 Ealtera_avalon_reset_source
-Z1 w1618797944
+Z1 w1618959929
 Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
 Z4 dD:\QP\SNios\software\app\obj\default\runtime\sim\mentor
@@ -17,7 +17,7 @@ VfRMF7ACRFLA9o@82@8n6Y3
 Z7 OV;C;10.1d;51
 32
 !i10b 1
-Z8 !s108 1618798267.876000
+Z8 !s108 1618960673.420000
 Z9 !s90 -reportprogress|300|D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/altera_avalon_reset_source.vhd|-work|HostSystem_inst_reset_bfm|
 Z10 !s107 D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/altera_avalon_reset_source.vhd|
 Z11 o-work HostSystem_inst_reset_bfm -O0

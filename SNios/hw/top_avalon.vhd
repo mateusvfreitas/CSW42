@@ -20,14 +20,6 @@ PORT ( 		clock, resetn : IN STD_LOGIC;
 		);
 END COMPONENT;
 
-COMPONENT contador8bit
-PORT ( 
-			  CLK    : in  STD_LOGIC;
-			  OUTPUT : out  STD_LOGIC_VECTOR (31 downto 0);
-			  cmd    : in STD_LOGIC_VECTOR (31 downto 0)
-		);
-END COMPONENT;
-
 signal write_enable0, write_enable1 : std_logic;
 signal read_enable0, read_enable1 : std_logic;
 signal reg32_read0_out, reg32_read1_out : STD_LOGIC_VECTOR(31 DOWNTO 0);

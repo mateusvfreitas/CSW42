@@ -15,7 +15,7 @@
   </columns>
  </clocktable>
  <library expandedCategories="Library,Project" />
- <window x="930" y="877" width="1665" height="1010" />
+ <window x="2093" y="319" width="1665" height="1010" />
  <generation
    synthesis="NONE"
    testbench_system="SIMPLE"
