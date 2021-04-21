@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include "io.h"
+#include "system.h"
+
+int main()
+{
+	int atual;
+	while(1) {
+		atual = IORD(COUNTBITS_0_BASE);
+	}
+	return 0;
+}

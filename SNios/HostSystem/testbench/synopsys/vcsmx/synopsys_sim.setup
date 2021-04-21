@@ -1,0 +1,28 @@
+
+WORK > DEFAULT
+DEFAULT:                                                                        ./libraries/work/                                                                          
+work:                                                                           ./libraries/work/                                                                          
+irq_mapper:                                                                     ./libraries/irq_mapper/                                                                    
+rsp_xbar_mux:                                                                   ./libraries/rsp_xbar_mux/                                                                  
+cmd_xbar_mux:                                                                   ./libraries/cmd_xbar_mux/                                                                  
+cmd_xbar_demux:                                                                 ./libraries/cmd_xbar_demux/                                                                
+id_router_001:                                                                  ./libraries/id_router_001/                                                                 
+id_router:                                                                      ./libraries/id_router/                                                                     
+addr_router:                                                                    ./libraries/addr_router/                                                                   
+top_avalon_0_avalon_slave_0_translator_avalon_universal_slave_0_agent_rsp_fifo: ./libraries/top_avalon_0_avalon_slave_0_translator_avalon_universal_slave_0_agent_rsp_fifo/
+memory_s1_translator_avalon_universal_slave_0_agent_rsp_fifo:                   ./libraries/memory_s1_translator_avalon_universal_slave_0_agent_rsp_fifo/                  
+top_avalon_0:                                                                   ./libraries/top_avalon_0/                                                                  
+cpu:                                                                            ./libraries/cpu/                                                                           
+memory:                                                                         ./libraries/memory/                                                                        
+HostSystem_inst_reset_bfm:                                                      ./libraries/HostSystem_inst_reset_bfm/                                                     
+HostSystem_inst_clk_bfm:                                                        ./libraries/HostSystem_inst_clk_bfm/                                                       
+HostSystem_inst:                                                                ./libraries/HostSystem_inst/                                                               
+altera:                                                                         ./libraries/altera/                                                                        
+lpm:                                                                            ./libraries/lpm/                                                                           
+sgate:                                                                          ./libraries/sgate/                                                                         
+altera_mf:                                                                      ./libraries/altera_mf/                                                                     
+altera_lnsim:                                                                   ./libraries/altera_lnsim/                                                                  
+cycloneiv_hssi:                                                                 ./libraries/cycloneiv_hssi/                                                                
+cycloneiv_pcie_hip:                                                             ./libraries/cycloneiv_pcie_hip/                                                            
+cycloneiv:                                                                      ./libraries/cycloneiv/                                                                     
+LIBRARY_SCAN = TRUE

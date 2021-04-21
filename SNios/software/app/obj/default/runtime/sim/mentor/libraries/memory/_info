@@ -1,0 +1,50 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\QP\SNios\software\app\obj\default\runtime\sim\mentor
+Ehostsystem_memory
+Z1 w1618797944
+Z2 DPx9 altera_mf 20 altera_mf_components 0 22 dN>@>Mze:JEj3f_7zNO2S2
+Z3 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z4 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z5 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z6 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z7 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z8 DPx6 altera 25 altera_europa_support_lib 0 22 ]K^I5dOJEzAULGF>=EIc]2
+Z9 dD:\QP\SNios\software\app\obj\default\runtime\sim\mentor
+Z10 8D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/HostSystem_memory.vhd
+Z11 FD:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/HostSystem_memory.vhd
+l0
+L29
+Vm^6MN_OKQ`i]Oz1KMAHPe2
+!s100 F0k<57aAZL3B=?dziebII2
+Z12 OV;C;10.1d;51
+32
+!i10b 1
+Z13 !s108 1618798267.826000
+Z14 !s90 -reportprogress|300|D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/HostSystem_memory.vhd|-work|memory|
+Z15 !s107 D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/HostSystem_memory.vhd|
+Z16 o-work memory -O0
+Z17 tExplicit 1
+Aeuropa
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+Z18 DEx4 work 17 hostsystem_memory 0 22 m^6MN_OKQ`i]Oz1KMAHPe2
+l81
+L51
+Z19 V=81eHO7ho8AG2Q3VJYLF:0
+Z20 !s100 cZKYDzL@NJomWPMRS1jXn0
+R12
+32
+!i10b 1
+R13
+R14
+R15
+R16
+R17
