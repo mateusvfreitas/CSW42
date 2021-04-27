@@ -1,7 +1,7 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
-use IEEE.numeric_std.all;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE IEEE.numeric_std.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 ENTITY top_avalon IS
 	PORT (
@@ -38,14 +38,16 @@ ARCHITECTURE Structure OF top_avalon IS
 	END COMPONENT;
 	SIGNAL write_enable : STD_LOGIC;
 	SIGNAL read_enable : STD_LOGIC;
+	SIGNAL gen_signal_enable : STD_LOGIC;
 	SIGNAL reg32_write_out : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	SIGNAL reg32_read_in : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	SIGNAL reg32_read_out : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	SIGNAL operation : STD_LOGIC_VECTOR(1 DOWNTO 0);
+	SIGNAL operation, last_operation : STD_LOGIC_VECTOR(1 DOWNTO 0);
+	SIGNAL cycles_to_generate, current_cycle : STD_LOGIC_VECTOR (7 DOWNTO 0) := x"00";
 	SIGNAL address_counter : STD_LOGIC_VECTOR (7 DOWNTO 0) := x"00";
 	SIGNAL last_address_written : STD_LOGIC_VECTOR (7 DOWNTO 0) := x"00";
-	SIGNAL ram_address : STD_LOGIC_VECTOR (7 DOWNTO 0) := x"00";
-	SIGNAL ram_data : STD_LOGIC_VECTOR (15 DOWNTO 0) := x"0000";
+	SIGNAL ram_address, ram_write_address : STD_LOGIC_VECTOR (7 DOWNTO 0) := x"00";
+	SIGNAL ram_data, ram_write_data : STD_LOGIC_VECTOR (15 DOWNTO 0) := x"0000";
 	SIGNAL ram_wren : STD_LOGIC := '0';
 	SIGNAL ram_q : STD_LOGIC_VECTOR (15 DOWNTO 0);
 
@@ -79,7 +81,12 @@ BEGIN
 	);
 
 	operation <= reg32_write_out(31 DOWNTO 30);
-	write_enable <= write_en AND chipselect AND (NOT add);
+	ram_write_address <= reg32_write_out(23 DOWNTO 16);
+	ram_write_data <= reg32_write_out(15 DOWNTO 0);
+	gen_signal_enable <= reg32_write_out(0);
+	cycles_to_generate <= reg32_write_out(7 DOWNTO 0);
+
+		write_enable <= write_en AND chipselect AND (NOT add);
 	read_enable <= read_en AND chipselect AND (NOT add);
 	readdata <= reg32_read_out WHEN read_enable = '1' ELSE
 		(OTHERS => 'Z');
@@ -90,20 +97,43 @@ BEGIN
 	PROCESS (clock)
 	BEGIN
 		IF rising_edge(clock) THEN
+			last_operation <= operation;
+			reg32_read_in <= x"0000" & ram_q;
 			IF operation = "00" THEN
 				ram_wren <= '0';
 				ram_address <= address_counter;
-				address_counter <= STD_LOGIC_VECTOR((unsigned(address_counter) + 1) mod unsigned(last_address_written));
-				reg32_read_in <= x"0000" & ram_q;
-			ELSIF operation = "01" THEN
+				-- só incrementa o contador se o bit estiver setado
+				IF gen_signal_enable = '1' THEN
+					address_counter <= STD_LOGIC_VECTOR((unsigned(address_counter) + 1));
+					-- volta o contador a zero ao chegar no ultimo endereço da ram
+					IF STD_LOGIC_VECTOR((unsigned(address_counter) + 1)) = last_address_written THEN
+						address_counter <= x"00";
+						current_cycle <= STD_LOGIC_VECTOR((unsigned(current_cycle) + 1));
+					END IF;
+				END IF;
+				ELSIF operation = "01" THEN
+				ram_wren <= '0';
+				ram_address <= address_counter;
+				-- só incrementa o contador se o bit estiver setado
+				IF current_cycle < cycles_to_generate THEN
+					address_counter <= STD_LOGIC_VECTOR((unsigned(address_counter) + 1));
+					-- volta o contador a zero ao chegar no ultimo endereço da ram
+					IF STD_LOGIC_VECTOR((unsigned(address_counter) + 1)) = last_address_written THEN
+						address_counter <= x"00";
+						current_cycle <= STD_LOGIC_VECTOR((unsigned(current_cycle) + 1));
+					END IF;
+				END IF;
 			ELSIF operation = "10" THEN
-				ram_address <= reg32_write_out(23 downto 16);
-				last_address_written <= reg32_write_out(23 downto 16);
-				ram_data <= reg32_write_out(15 downto 0);
+				ram_address <= ram_write_address;
+				last_address_written <= ram_write_address;
+				ram_data <= ram_write_data;
 				ram_wren <= '1';
-				-- reg32_read_in <= x"00000000";
-				--			ELSIF operation = "11" THEN
-				--				reg32_read_in <= x"00004444";
+			END IF;
+			IF last_operation /= operation THEN
+				address_counter <= x"00";
+				ram_address <= x"00";
+				ram_wren <= '0';
+				current_cycle <= x"00";
 			END IF;
 		END IF;
 	END PROCESS;
