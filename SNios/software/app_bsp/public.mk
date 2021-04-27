@@ -236,7 +236,7 @@ ALT_CPPFLAGS += -DSMALL_C_LIB
 # application .elf file (and BSP it is linked against) corresponds to the 
 # hardware design on the target. If false, adds --accept-bad-sysid to 
 # SOPC_SYSID_FLAG in public.mk. none 
-# setting hal.enable_sopc_sysid_check is false
+# setting hal.enable_sopc_sysid_check is 0
 SOPC_SYSID_FLAG += --accept-bad-sysid
 
 # Enable BSP generation to query if SOPC system is big endian. If true ignores 

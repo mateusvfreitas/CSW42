@@ -16,10 +16,10 @@ sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/write_en \
 sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/readdata \
 sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/add \
 sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/read_en \
-sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/write_enable0 \
-sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/write_enable1 \
-sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/read_enable0 \
-sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/read_enable1 \
-sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/reg32_read0_out \
-sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/reg32_read1_out
+sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/write_enable \
+sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/read_enable \
+sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/reg32_write_out \
+sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/reg32_read_in \
+sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/reg32_read_out \
+sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/operation
 run 200 us
