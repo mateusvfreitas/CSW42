@@ -3,23 +3,58 @@ K3
 13
 cModel Technology
 Z0 dD:\QP\SNios\software\app\obj\default\runtime\sim\mentor
-Ereg32
-Z1 w1619489519
+Ebram
+Z1 w1619497011
 Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
 Z4 dD:\QP\SNios\software\app\obj\default\runtime\sim\mentor
-Z5 8D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/reg32.vhd
-Z6 FD:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/reg32.vhd
+Z5 8D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/bram.vhd
+Z6 FD:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/bram.vhd
+l0
+L42
+VS]H1SPZ0J9R_D7de`Xch=1
+!s100 0naPR0WhdOULPRhKzFjX20
+Z7 OV;C;10.1d;51
+32
+!i10b 1
+Z8 !s108 1619497059.719000
+Z9 !s90 -reportprogress|300|D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/bram.vhd|-work|top_avalon_0|
+Z10 !s107 D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/bram.vhd|
+Z11 o-work top_avalon_0 -O0
+Z12 tExplicit 1
+Asyn
+R2
+R3
+Z13 DEx4 work 4 bram 0 22 S]H1SPZ0J9R_D7de`Xch=1
+l86
+L54
+Z14 V1M@aCXQP40;g]Bnb`4SBR3
+Z15 !s100 J0;^oI^j`65deOlPM:?1a2
+R7
+32
+!i10b 1
+R8
+R9
+R10
+R11
+R12
+Ereg32
+R1
+R2
+R3
+R4
+Z16 8D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/reg32.vhd
+Z17 FD:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/reg32.vhd
 l0
 L3
 VN4>ca5c6nPdTKG[Uej]3J2
-Z7 OV;C;10.1d;51
+R7
 32
-Z8 !s108 1619489960.386000
-Z9 !s90 -reportprogress|300|D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/reg32.vhd|-work|top_avalon_0|
-Z10 !s107 D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/reg32.vhd|
-Z11 o-work top_avalon_0 -O0
-Z12 tExplicit 1
+Z18 !s108 1619497059.498000
+Z19 !s90 -reportprogress|300|D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/reg32.vhd|-work|top_avalon_0|
+Z20 !s107 D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/reg32.vhd|
+R11
+R12
 !s100 kk@4:=b9]e1^l]aUjiNY70
 !i10b 1
 Abehavior
@@ -29,47 +64,53 @@ DEx4 work 5 reg32 0 22 N4>ca5c6nPdTKG[Uej]3J2
 l20
 L10
 VD;0RS1JHHiXHeGM5>=BcS2
-!s100 @HnK:BP5FlA04nkUmR`UP1
 R7
 32
-R8
-R9
-R10
+R18
+R19
+R20
 R11
 R12
+!s100 @HnK:BP5FlA04nkUmR`UP1
 !i10b 1
 Etop_avalon
 R1
+Z21 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z22 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z23 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 R2
 R3
 R4
-Z13 8D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/top_avalon.vhd
-Z14 FD:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/top_avalon.vhd
+Z24 8D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/top_avalon.vhd
+Z25 FD:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/top_avalon.vhd
 l0
-L3
-VMWm?]VeFY6U@M[g627`bk1
-!s100 hf8Sd^8b2Em=>GPIVCXgB1
+L6
+VZL?ld<XID200YZnmKn1VC1
 R7
 32
-!i10b 1
-Z15 !s108 1619489960.445000
-Z16 !s90 -reportprogress|300|D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/top_avalon.vhd|-work|top_avalon_0|
-Z17 !s107 D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/top_avalon.vhd|
+Z26 !s108 1619497059.679000
+Z27 !s90 -reportprogress|300|D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/top_avalon.vhd|-work|top_avalon_0|
+Z28 !s107 D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/top_avalon.vhd|
 R11
 R12
+!s100 E_^VCUh3Lgen<L1ZmQzom0
+!i10b 1
 Astructure
+R21
+R22
+R23
 R2
 R3
-Z18 DEx4 work 10 top_avalon 0 22 MWm?]VeFY6U@M[g627`bk1
-l34
-L15
-VC:?Zg11H_;7HM^>Q4WLE62
-!s100 f=bST2g7JaXEONo<5Eh5L0
+DEx4 work 10 top_avalon 0 22 ZL?ld<XID200YZnmKn1VC1
+l52
+L18
+V3g:[Nkn>=Tc2O]EmfWBPf2
 R7
 32
-!i10b 1
-R15
-R16
-R17
+R26
+R27
+R28
 R11
 R12
+!s100 bi>V1@WHR30XDoAWomQn91
+!i10b 1

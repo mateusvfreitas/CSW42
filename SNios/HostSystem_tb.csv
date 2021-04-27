@@ -1,12 +1,12 @@
-# system info HostSystem_tb on 2021.04.26.23:12:05
+# system info HostSystem_tb on 2021.04.27.01:16:57
 system_info:
 name,value
 DEVICE,Unknown
 DEVICE_FAMILY,Cyclone IV GX
-GENERATION_ID,1619489515
+GENERATION_ID,1619497008
 #
 #
-# Files generated for HostSystem_tb on 2021.04.26.23:12:05
+# Files generated for HostSystem_tb on 2021.04.27.01:16:57
 files:
 filepath,kind,attributes,module,is_top
 HostSystem/testbench/HostSystem_tb/simulation/HostSystem_tb.vhd,VHDL,,HostSystem_tb,true
@@ -34,6 +34,7 @@ HostSystem/testbench/HostSystem_tb/simulation/submodules/HostSystem_cpu_rf_ram_b
 HostSystem/testbench/HostSystem_tb/simulation/submodules/HostSystem_cpu_test_bench.vhd,VHDL,,HostSystem_cpu,false
 HostSystem/testbench/HostSystem_tb/simulation/submodules/reg32.vhd,VHDL,,top_avalon,false
 HostSystem/testbench/HostSystem_tb/simulation/submodules/top_avalon.vhd,VHDL,,top_avalon,false
+HostSystem/testbench/HostSystem_tb/simulation/submodules/bram.vhd,VHDL,,top_avalon,false
 HostSystem/testbench/HostSystem_tb/simulation/submodules/mentor/altera_merlin_master_translator.sv,SYSTEM_VERILOG_ENCRYPT,MENTOR_SPECIFIC,altera_merlin_master_translator,false
 HostSystem/testbench/HostSystem_tb/simulation/submodules/aldec/altera_merlin_master_translator.sv,SYSTEM_VERILOG_ENCRYPT,ALDEC_SPECIFIC,altera_merlin_master_translator,false
 HostSystem/testbench/HostSystem_tb/simulation/submodules/mentor/altera_merlin_slave_translator.sv,SYSTEM_VERILOG_ENCRYPT,MENTOR_SPECIFIC,altera_merlin_slave_translator,false

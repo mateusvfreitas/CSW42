@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 13.0sp1 232 win32 2021.04.26.23:12:05
+# ACDS 13.0sp1 232 win32 2021.04.27.01:16:58
 
 # ----------------------------------------
 # Auto-generated simulation script
@@ -200,6 +200,7 @@ alias com {
   vlog  "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/aldec/altera_merlin_master_translator.sv"                                                      -work cpu_instruction_master_translator                                             
   vcom  "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/reg32.vhd"                                                                                     -work top_avalon_0                                                                  
   vcom  "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/top_avalon.vhd"                                                                                -work top_avalon_0                                                                  
+  vcom  "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/bram.vhd"                                                                                      -work top_avalon_0                                                                  
   vcom  "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_cpu.vhd"                                                                            -work cpu                                                                           
   vcom  "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_cpu_test_bench.vhd"                                                                 -work cpu                                                                           
   vcom  "$QSYS_SIMDIR/HostSystem_tb/simulation/submodules/HostSystem_memory.vhd"                                                                         -work memory                                                                        

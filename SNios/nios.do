@@ -21,5 +21,11 @@ sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/read_enable \
 sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/reg32_write_out \
 sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/reg32_read_in \
 sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/reg32_read_out \
-sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/operation
-run 200 us
+sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/operation \
+sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/address_counter \
+sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/last_address_written \
+sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/ram_address \
+sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/ram_data \
+sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/ram_wren \
+sim:/hostsystem_tb/hostsystem_inst/top_avalon_0/ram_q
+run 400 us
