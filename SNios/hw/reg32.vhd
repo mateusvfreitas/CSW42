@@ -20,7 +20,7 @@ COMPONENT contador8bit
 BEGIN
 PROCESS(resetn, clock)
 BEGIN
-	IF resetn = '1' THEN
+	IF resetn = '0' THEN
 		Q <= x"00000000";
 	elsif clock'EVENT AND clock = '1' then
 		if WE = '1' then

@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 13.0sp1 232 win32 2021.04.18.23:10:18
+# ACDS 13.0sp1 232 win32 2021.04.27.00:10:21
 
 # ----------------------------------------
 # ncsim - auto-generated simulation script
@@ -123,6 +123,7 @@ if [ $SKIP_COM -eq 0 ]; then
   ncvhdl -v93 "D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/HostSystem_memory_s1_translator_avalon_universal_slave_0_agent_rsp_fifo.vho"                   -work memory_s1_translator_avalon_universal_slave_0_agent_rsp_fifo                   -cdslib ./cds_libs/memory_s1_translator_avalon_universal_slave_0_agent_rsp_fifo.cds.lib                  
   ncvhdl -v93 "D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/reg32.vhd"                                                                                     -work top_avalon_0                                                                   -cdslib ./cds_libs/top_avalon_0.cds.lib                                                                  
   ncvhdl -v93 "D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/top_avalon.vhd"                                                                                -work top_avalon_0                                                                   -cdslib ./cds_libs/top_avalon_0.cds.lib                                                                  
+  ncvhdl -v93 "D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/bram.vhd"                                                                                      -work top_avalon_0                                                                   -cdslib ./cds_libs/top_avalon_0.cds.lib                                                                  
   ncvhdl -v93 "D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/HostSystem_cpu.vhd"                                                                            -work cpu                                                                            -cdslib ./cds_libs/cpu.cds.lib                                                                           
   ncvhdl -v93 "D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/HostSystem_cpu_test_bench.vhd"                                                                 -work cpu                                                                            -cdslib ./cds_libs/cpu.cds.lib                                                                           
   ncvhdl -v93 "D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/HostSystem_memory.vhd"                                                                         -work memory                                                                         -cdslib ./cds_libs/memory.cds.lib                                                                        

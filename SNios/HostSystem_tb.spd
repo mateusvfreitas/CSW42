@@ -145,6 +145,10 @@
    type="VHDL"
    library="top_avalon_0" />
  <file
+   path="HostSystem/testbench/HostSystem_tb/simulation/submodules/bram.vhd"
+   type="VHDL"
+   library="top_avalon_0" />
+ <file
    path="HostSystem/testbench/HostSystem_tb/simulation/submodules/HostSystem_cpu.vhd"
    type="VHDL"
    library="cpu" />

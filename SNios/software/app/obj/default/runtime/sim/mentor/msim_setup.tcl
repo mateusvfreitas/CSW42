@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 13.0sp1 232 win32 2021.04.18.23:10:17
+# ACDS 13.0sp1 232 win32 2021.04.27.00:10:21
 
 # ----------------------------------------
 # Auto-generated simulation script
@@ -197,6 +197,7 @@ alias com {
   vlog -sv "D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/mentor/altera_merlin_master_translator.sv"                                                     -work cpu_instruction_master_translator                                             
   vcom     "D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/reg32.vhd"                                                                                     -work top_avalon_0                                                                  
   vcom     "D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/top_avalon.vhd"                                                                                -work top_avalon_0                                                                  
+  vcom     "D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/bram.vhd"                                                                                      -work top_avalon_0                                                                  
   vcom     "D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/HostSystem_cpu.vhd"                                                                            -work cpu                                                                           
   vcom     "D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/HostSystem_cpu_test_bench.vhd"                                                                 -work cpu                                                                           
   vcom     "D:/QP/SNios/HostSystem/testbench/HostSystem_tb/simulation/submodules/HostSystem_memory.vhd"                                                                         -work memory                                                                        
